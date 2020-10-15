@@ -13,12 +13,14 @@
 </nav>
 
 
-<div class="w3-sidebar w3-bar-block w3-card w3-animate-left bg-dark position-fixed" style="width: 20%; top: 0;left:0" id="leftMenu"> 
+<div class="w3-sidebar w3-bar-block w3-card w3-animate-left bg-dark position-fixed" style="display: none; width: 20%; top: 0;left:0" id="leftMenu"> 
 
   <button onclick="closeLeftMenu()" class="w3-bar-item w3-button w3-large bg-danger text-center text-white position-absolute" style="width: 45px; height: 45px; left: 100%; top: 5px"> &times;</button>
   <h2 class='pl-3 text-white mt-2'>Dashboard</h2>
   <a class="nav-link py-3 text-white w3-bar-item w3-button active mt-3" href="dashboard.php">Home <span class="sr-only">(current)</span></a>
   <a class="nav-link py-3 text-white w3-bar-item w3-button" href="members.php">All Tree's</a>
+  <a class="nav-link py-3 text-white w3-bar-item w3-button" href="members.php?do=Add">Add New Member</a>
+  <a class="nav-link py-3 text-white w3-bar-item w3-button" href="search.php">Search</a>
   <a class="nav-link py-3 text-white w3-bar-item w3-button" href="logout.php">Logout</a>
 </div>
 

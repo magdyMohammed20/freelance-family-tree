@@ -4,15 +4,10 @@
      // If Session Exist Include [init.php] To Allow Navbar And If I Enter To Dashboard Without Login Or Without Start The Session It Will Direct Me To Login Page
     if(isset($_SESSION['userName'])){
         include 'init.php';
-        // For Modify Query To Fetch The Pending Members
-        $query = '';
         // Check The Query
         $do = isset($_GET['do'])?$_GET['do']:'Manage';
 
-        // Check If I Request Data Of Pending Members
-        if(isset($_GET['pending'])== 'pend'){
-            $query = 'AND reg_status = 0';
-        }
+      
         if($do == 'Manage'){
 
             $stmt = $conn->prepare("SELECT * FROM person");
@@ -320,7 +315,7 @@
         else if($do == 'Add'){?>
 
 <div class="container">
-
+<button class="w3-button w3-teal w3-xlarge w3-left w3-open position-absolute" onclick="openLeftMenu()" style='left: 0; '>&#9776;</button>
 <h2 class="p-2 bg-dark text-white my-5 rounded"><i class="fas fa-user-plus mr-2" style="color: #ee5253"></i>Add New Member</h2>
     <form class="edit-form" action="?do=insert" method="POST" enctype="multipart/form-data">
         <div class="row">
