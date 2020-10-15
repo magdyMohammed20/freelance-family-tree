@@ -21,6 +21,7 @@
 
         ?>
 <h1 class="text-center mt-3">Manage Members</h1>
+<button class="w3-button w3-teal w3-xlarge w3-left w3-open position-absolute" onclick="openLeftMenu()" style='left: 0; top: 80px'>&#9776;</button>
 <div class="container">
 
                 <?php
@@ -319,6 +320,7 @@
         else if($do == 'Add'){?>
 
 <div class="container">
+
 <h2 class="p-2 bg-dark text-white my-5 rounded"><i class="fas fa-user-plus mr-2" style="color: #ee5253"></i>Add New Member</h2>
     <form class="edit-form" action="?do=insert" method="POST" enctype="multipart/form-data">
         <div class="row">

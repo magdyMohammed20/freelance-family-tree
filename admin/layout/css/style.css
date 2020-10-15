@@ -25,55 +25,6 @@ body {
 }
 /* End Admin Login */
 
-/* Navbar */
-.navbar-nav {
-  width: 100%;
-}
-
-.navbar-nav .dropdown-menu {
-  border: 0;
-  border-top: 2px solid #ee5253;
-  left: -100% !important;
-  border-radius: 0;
-  padding: 0;
-  top: 97%;
-  box-shadow: 0px 0px 5px 0px #343a40;
-}
-
-.dropdown-menu .dropdown-item {
-  padding: 10px 25px !important;
-  transition: all 0.2s ease-in;
-}
-.dropdown-menu .dropdown-item:hover {
-  background-color: #ee5253;
-  padding: 10px 25px 10px 30px !important;
-}
-
-.navbar-nav .nav-item {
-  width: 7%;
-}
-.navbar-dark .navbar-nav .nav-link {
-  display: block;
-  text-align: center;
-  transition: 0.2s linear;
-}
-
-.navbar-dark .navbar-nav .active > .nav-link,
-.navbar-dark .navbar-nav .nav-link:not(#navbarDropdown):hover {
-  background-color: #ee5253;
-}
-/* Navbar */
-
-/* Members Table In Admin Page */
-.members-table {
-  background-color: #fff;
-  text-align: center;
-}
-
-.members-table td {
-  line-height: 2.3;
-}
-
 /* Dashboard Style */
 .admin-stats .row > div div {
   transition: all 0.3s ease;
@@ -91,6 +42,7 @@ body {
   background-image: linear-gradient(135deg, #81fbb8 10%, #28c76f 100%);
 }
 
+/*
 .admin-stats .row > div:nth-child(3) div {
   background-image: linear-gradient(135deg, #43cbff 10%, #9708cc 100%);
 }
@@ -98,7 +50,7 @@ body {
 .admin-stats .row > div:nth-child(4) div {
   background-image: linear-gradient(135deg, #f05f57 10%, #360940 100%);
 }
-
+*/
 .admin-stats .row > div div p {
   color: #fff;
   font-size: 1.4em;
@@ -116,38 +68,42 @@ body {
   color: #fff;
 }
 
-/* Admin Dashboard */
 .latest-users li:nth-child(odd) {
   background-color: #eee;
 }
 
-/* Categories */
-.cats hr:last-of-type {
-  display: none;
-}
-
-.cat-controls {
-  transition: all 0.3s ease-in-out;
-  transform: translateX(20px);
-  opacity: 0;
-}
-
-.cats li:hover .cat-controls {
-  transform: translateX(0);
-  opacity: 1;
-}
-
-.ordering-method .active {
-  background-color: #dc3545 !important;
-}
+/* Admin Dashboard */
 
 /* Global Styles */
+a:hover {
+  text-decoration: none;
+}
 .cover {
   position: absolute;
   left: 0;
   top: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: rgba(0, 0, 0, 0.9);
   z-index: -1;
+}
+
+.w3-sidebar {
+  overflow: visible;
+}
+
+.w3-sidebar a {
+  transition: all 0.2s linear;
+}
+.w3-sidebar a:hover {
+  background: rgba(0, 0, 0, 0.2) !important;
+  color: #fff !important;
+}
+
+button.w3-button.w3-xlarge {
+  background-color: #343a40 !important;
+}
+
+button.w3-button.w3-xlarge:hover {
+  color: #fff !important;
 }

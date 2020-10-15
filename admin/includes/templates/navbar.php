@@ -1,46 +1,35 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark py-0">
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
 
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav">
-      <li class="nav-item active">
-        <a class="nav-link py-3" href="dashboard.php">Home <span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link py-3" href="categories.php">Categories</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link py-3" href="items.php">Items</a>
-      </li>
+    <ul class="navbar-nav ml-auto">
 
-      <li class="nav-item dropdown ml-auto">
-        <a class="nav-link py-3 dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          <?php echo substr($_SESSION['userName'] , 0,5); ?>
+      <li class="nav-item">
+        <a class="nav-link py-3" href="dashboard.php">
+          <img src='../../layout/images/default.png'/>
+        <?php echo substr($_SESSION['userName'] , 0,5); ?>
         </a>
-        <div class="dropdown-menu bg-dark" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item text-white" href="logout.php">Logout</a>
-        </div>
       </li>
 
     </ul>
-  </div>
 </nav>
 
 
-<script>
-    var drop = document.getElementById('navbarDropdown'),
-        menu = document.getElementsByClassName('dropdown-menu')[0];
-    var open = true;
+<div class="w3-sidebar w3-bar-block w3-card w3-animate-left bg-dark position-fixed" style="width: 20%; top: 0;left:0" id="leftMenu"> 
 
-    drop.onclick = function(){
-      if(open){
-          menu.style.display = 'block';
-          open = false;
-      }else{
-          menu.style.display = 'none';
-          open = true;
-      }
-    };
+  <button onclick="closeLeftMenu()" class="w3-bar-item w3-button w3-large bg-danger text-center text-white position-absolute" style="width: 45px; height: 45px; left: 100%; top: 5px"> &times;</button>
+  <h2 class='pl-3 text-white mt-2'>Dashboard</h2>
+  <a class="nav-link py-3 text-white w3-bar-item w3-button active mt-3" href="dashboard.php">Home <span class="sr-only">(current)</span></a>
+  <a class="nav-link py-3 text-white w3-bar-item w3-button" href="members.php">All Tree's</a>
+  <a class="nav-link py-3 text-white w3-bar-item w3-button" href="logout.php">Logout</a>
+</div>
+
+<script>
+function openLeftMenu() {
+  document.getElementById("leftMenu").style.display = "block";
+  document.getElementsByClassName('w3-open')[0].style.display = "none"
+}
+
+function closeLeftMenu() {
+  document.getElementById("leftMenu").style.display = "none";
+  document.getElementsByClassName('w3-open')[0].style.display = "block"
+}
 </script>
