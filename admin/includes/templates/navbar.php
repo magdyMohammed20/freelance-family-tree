@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark py-0">
-<a class="navbar-brand" href="#">
+<a class="navbar-brand" href="dashboard.php">
         <img src='https://i.ibb.co/vqfZsQc/family-tree6.jpg' class='rounded-circle mr-2' style=" width: 50px;height: 50px;"/>
       </a>
     <ul class="navbar-nav mr-auto">

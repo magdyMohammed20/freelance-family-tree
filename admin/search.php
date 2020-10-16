@@ -63,7 +63,7 @@
 <?php
         
     }
-    echo '<div class="container">';
+    echo '<div class="container text-right">';
     if(isset($_GET['do']) && $_GET['do'] == 'find'){
         $firstName = trim(strtolower($_POST['first_name_search']));
         $secondName = trim(strtolower($_POST['second_name_search']));
@@ -89,22 +89,22 @@
             if(strpos( $name['full_name'], $firstName ) === 0 && strpos($name['full_name'] , $secondName) >= 0&& strpos($name['full_name'] , $thirdName) >= 0 && $city === $cityName){
                 
                 echo '<div class="row">';
-                    echo '<div class="col-6">';
-                        echo 'Member Name: ' . '<span class="font-weight-bold">'.$name['full_name'].'</span>';
+                    echo '<div class="col-12 col-lg-6 mt-3">';
+                        echo 'اسم العضو: ' . '<span class="font-weight-bold">'.$name['full_name'].'</span>';
                     echo '</div>';
 
-                    echo '<div class="col-6">';
-                        echo 'Wife Name: ' . '<span class="font-weight-bold">'.$name['wife_name'].'</span>';
+                    echo '<div class="col-12 col-lg-6 mt-3">';
+                        echo 'اسم الزوجة: ' . '<span class="font-weight-bold">'.$name['wife_name'].'</span>';
                     echo '</div>';
                 echo '</div>';
 
-                echo '<div class="row my-3">';
-                    echo '<div class="col-6">';
-                        echo 'Mother Name: ' . '<span class="font-weight-bold">'.$name['mother_name'].'</span>';
+                echo '<div class="row">';
+                    echo '<div class="col-12 col-lg-6 mt-3">';
+                        echo 'اسم الام: ' . '<span class="font-weight-bold">'.$name['mother_name'].'</span>';
                     echo '</div>';
 
-                    echo '<div class="col-6">';
-                        echo 'City Name: ' . '<span class="font-weight-bold">'.$name['city_name'].'</span>';
+                    echo '<div class="col-12 col-lg-6 mt-3">';
+                        echo 'القرية: ' . '<span class="font-weight-bold">'.$name['city_name'].'</span>';
                     echo '</div>';
                 echo '</div>';
                 
@@ -120,7 +120,7 @@
         else{
             $divideFrandName = explode(" " , $personFounded);
         $grandName = end($divideFrandName);
-        echo '<span class="badge badge-success mt-5">Grand Father</span>';
+        echo '<span class="badge badge-success mt-5">اسم الجد</span>';
         echo '<div class="text-center">';
         echo '<i class="fas fa-user-alt fa-3x"></i>';
         
@@ -130,7 +130,7 @@
         // Find Uncle
         $allUserName = explode(" " , $personFounded);
         $uncleFound = 0;
-        echo '<span class="badge badge-primary">Uncle</span>';
+        echo '<span class="badge badge-primary">اسم العم</span>';
         echo '<div class="row justify-content-around">';
         foreach($data as $uncle){
             $filter = explode(" " , $uncle['full_name']);
@@ -150,18 +150,18 @@
                 $sliceun2 = array_slice($expun,0);
 
                 if(array_diff($slicemem , $sliceun2) !== Array()){
-                    echo '<div class="col-3 my-2 text-center"><i class="fas fa-user-alt fa-3x d-block mb-2"></i>'.implode(" " , $sliceun2).'</div>';
+                    echo '<div class="col-12 col-md-4 col-lg-3 my-2 text-center"><i class="fas fa-user-alt fa-3x d-block mb-2"></i>'.implode(" " , $sliceun2).'</div>';
                     $uncleFound = 1;
                 }
             }
         }
         if($uncleFound == 0){
-            echo '<div class="alert alert-danger w-75 mx-auto my-3 shadow">No Uncles Founded </div>';
+            echo '<div class="alert alert-danger w-75 mx-auto my-3 shadow">لايوجد اعمام </div>';
         }
         echo '</div>';
 
         echo '<br><br>';
-        echo '<span class="badge badge-danger">Brothers</span>';
+        echo '<span class="badge badge-danger">اسماء الاخوة</span>';
         echo '<div class="row justify-content-around">';
         $brotherFound = 0;
         // Find Brothers That User   
@@ -170,7 +170,7 @@
             $expBrotherName2 = explode(" " , $brother['full_name']);
             if($expBrotherName1[1] === $expBrotherName2[1] && end($expBrotherName1) === end($expBrotherName2) && $personFounded !== $brother['full_name']){
                 $brotherFound = 1;
-                echo '<div class="col-3 my-2 text-center"><i class="fas fa-user-alt fa-3x d-block mb-2"></i>'.$brother['full_name'].'</div>';
+                echo '<div class="col-12 col-md-4 col-lg-3 my-2 text-center"><i class="fas fa-user-alt fa-3x d-block mb-2"></i>'.$brother['full_name'].'</div>';
             }
         }
 
@@ -191,7 +191,7 @@
                 if($fatherName1 === $fatherName2 && $memFamily === $familyName){
                     if(implode(" " , $expbrother ) !== $personFounded){
                         $brotherFound = 1;
-                        echo '<div class="col-3 my-2 text-center"><i class="fas fa-user-alt fa-3x d-block mb-2"></i>'.implode(" " , $expbrother ).'</div>';
+                        echo '<div class="col-12 col-md-4 col-lg-3 my-2 text-center"><i class="fas fa-user-alt fa-3x d-block mb-2"></i>'.implode(" " , $expbrother ).'</div>';
                     }
                     
                 } 
@@ -204,11 +204,11 @@
             $expBrotherName2 = explode(" " , $brother['wife_name']);
             if($expBrotherName1[1] === $expBrotherName2[1] && end($expBrotherName1) === end($expBrotherName2)){
                 $brotherFound = 1;
-                echo '<div class="col-3 my-2 text-center"><i class="fas fa-user-alt fa-3x d-block mb-2"></i>'.$brother['wife_name'].'</div>';
+                echo '<div class="col-12 col-md-4 col-lg-3 my-2 text-center"><i class="fas fa-user-alt fa-3x d-block mb-2"></i>'.$brother['wife_name'].'</div>';
             }
         }
         if($brotherFound == 0){
-            echo '<div class="alert alert-danger w-75 mx-auto my-3 shadow">No Brothers Founded </div>';
+            echo '<div class="alert alert-danger w-75 mx-auto my-3 shadow">لايوجد اخوة </div>';
         }
         echo '</div>';
 
@@ -217,10 +217,10 @@
         // Get Sons Of Users
         $sonsArr = explode(PHP_EOL, $personFoundedSons);
         echo '<br><br>';
-        echo '<span class="badge badge-info">Sons</span>';
+        echo '<span class="badge badge-info">اسماء الابناء</span>';
         echo '<div class="row justify-content-around">';
         foreach($sonsArr as $son){
-            echo "<div class='col-3 my-2 text-center'><i class='fas fa-user-alt fa-3x d-block mb-2'></i>".  $son ."</div>";
+            echo "<div class='col-12 col-md-4 col-lg-3 my-2 text-center'><i class='fas fa-user-alt fa-3x d-block mb-2'></i>".  $son ."</div>";
         }
 
         // Find Son That Wife Of Another User
@@ -228,7 +228,7 @@
             $expBrotherName1 = explode(" " , $personFounded);
             $expBrotherName2 = explode(" " , $son['wife_name']);
             if($expBrotherName1[0] === $expBrotherName2[1] && end($expBrotherName1) === end($expBrotherName2)){
-                echo '<div class="col-3 my-2 text-center"><i class="fas fa-user-alt fa-3x d-block mb-2"></i>'.$son['wife_name'].'</div>';
+                echo '<div class="col-12 col-md-4 col-lg-3 my-2 text-center"><i class="fas fa-user-alt fa-3x d-block mb-2"></i>'.$son['wife_name'].'</div>';
             }
         }
 
@@ -249,7 +249,7 @@
             $familyName2 = strtolower(end($sonBefore));
 
             if($ParentName1 === $ParentName2 && $familyName1 === $familyName2 && ! in_array($son['full_name'] , explode(PHP_EOL , $personFoundedSons))){
-                echo '<div class="col-3 my-2 text-center"><i class="fas fa-user-alt fa-3x d-block mb-2"></i>'.$son['full_name'].'</div>';
+                echo '<div class="col-12 col-md-4 col-lg-3 my-2 text-center"><i class="fas fa-user-alt fa-3x d-block mb-2"></i>'.$son['full_name'].'</div>';
             }
             }
 
@@ -262,7 +262,7 @@
         $fatherName1 = $expmother[1] . ' ' . $expmother[2];
         $familyName1 = end($expmother);
         $uncle2Found = 0;
-        echo '<span class="badge badge-warning">Uncle (الخال)</span>';
+        echo '<span class="badge badge-warning">اسم الخال</span>';
         echo '<div class="row justify-content-around">';
         foreach($data as $uncle2){
             $expfather = explode(" " , $uncle2['full_name']);
@@ -270,12 +270,12 @@
             $familyName2 = end($expfather);
             
             if($fatherName1 === $fatherName2 && $familyName1 === $familyName2){
-                echo '<div class="col-3 my-2 text-center"><i class="fas fa-user-alt fa-3x d-block mb-2"></i>'.$uncle2['full_name'].'</div>';
+                echo '<div class="col-12 col-md-4 col-lg-3 my-2 text-center"><i class="fas fa-user-alt fa-3x d-block mb-2"></i>'.$uncle2['full_name'].'</div>';
                 $uncle2Found = 1;
             }
         } 
         if($uncle2Found == 0){
-            echo '<div class="alert alert-danger w-75 mx-auto my-3 shadow">No Uncles Founded </div>';
+            echo '<div class="alert alert-danger w-75 mx-auto my-3 shadow">لايوجد خال </div>';
         }
         echo '</div>';
         }             
