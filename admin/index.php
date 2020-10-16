@@ -48,7 +48,7 @@
     <!-- Div For Cover -->
     <div class="cover"></div>
     <!-- Admin Login Form -->
-    <form class="admin-form w-50 p-5" action='<?php echo $_SERVER["PHP_SELF"]?>' method='POST'>
+    <form class="admin-form w-50 p-5 text-right" action='<?php echo $_SERVER["PHP_SELF"]?>' method='POST'>
         <?php 
             
             if(isset($userName) && isset($adminPass) && ($userName === '' || $adminPass === '' ) && (isset($count) && $count == 0)){
@@ -56,10 +56,10 @@
             }
 
         ?>
-        <h2 class="mb-4">Admin Login</h2>
-        <input type="text" name="user" placeholder="username" autocomplete="off" class="form-control mt-3 rounded-0">
-        <input type="password" name="adminPass" placeholder="password" autocomplete="New-Password" class="form-control mt-3 rounded-0">
-        <input type="submit" name="subAdmin" class="mt-4 btn text-white rounded-0 w-25 px-3 py-2" value="Login">
+        <h2 class="mb-4">تسجيل دخول الادمن</h2>
+        <input type="text" name="user" placeholder="اسم المستخدم" autocomplete="off" class="form-control mt-3 rounded-0">
+        <input type="password" name="adminPass" placeholder="كلمة السر" autocomplete="New-Password" class="form-control mt-3 rounded-0">
+        <input type="submit" name="subAdmin" class="mt-4 btn text-white rounded-0 w-25 px-3 py-2" value="تسجيل الدخول">
     </form>
     <style>
         body{

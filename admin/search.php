@@ -14,39 +14,42 @@
 ?>
 
 
-<div class="container admin-stats py-4">
-<button class="w3-button w3-teal w3-xlarge w3-left w3-open position-absolute" onclick="openLeftMenu()" style='left: 0; '>&#9776;</button>
+<div class="container admin-stats py-4 text-right">
+<button class="w3-button w3-teal w3-xlarge w3-left w3-open position-absolute" onclick="openLeftMenu()" style='right: 0; '>&#9776;</button>
     
     <div class="row mt-4">
         
         <form method='POST' action='?do=find' class='w-100'>
             
-                <div class='p-2 w-75 mx-auto'>
-                    <label>First Name</label>
-                    <input type='text' class='form-control rounded-0' name='first_name_search' required/>
-                </div>
-                <div class='p-2 w-75 mx-auto'>
-                    <label>Second Name</label>
-                    <input type='text' class='form-control rounded-0' name='second_name_search' required/>
-                </div>
-                <div class='p-2 w-75 mx-auto'>
-                    <label>Third Name</label>
-                    <input type='text' class='form-control rounded-0' name='third_name_search' required/>
-                </div>
-                <div class='p-2 w-75 mx-auto'>
-                    <label>Family Name</label>
-                    <input type='text' class='form-control rounded-0' name='family' required />
-                </div>
-                <div class='p-2 w-75 mx-auto'>
-                    <label>City Name</label>
-                    <input type='text' class='form-control rounded-0' name='city_search' required/>
-                </div>
-                <div class='p-2 w-75 mx-auto'>
-                    <!--<input type='submit' class='btn btn-dark px-3 py-2' value='Search'/>-->
-                    <button class='btn btn-dark px-4 py-2 rounded-0'>
-                        <i class="fas fa-search mr-1" style="color: #ee5253"></i>
-                        Search
-                    </button>
+                <div class="row px-4 pt-5">
+                    <div class='p-2 col-12 col-md-6'>
+                        <label>الاسم الاول</label>
+                        <input type='text' class='form-control rounded-0' name='first_name_search' required/>
+                    </div>
+                    <div class='p-2 col-12 col-md-6'>
+                        <label>الاسم الثاني</label>
+                        <input type='text' class='form-control rounded-0' name='second_name_search' required/>
+                    </div>
+                    <div class='p-2 col-12 col-md-6'>
+                        <label>الاسم الثالث</label>
+                        <input type='text' class='form-control rounded-0' name='third_name_search' required/>
+                    </div>
+                    <div class='p-2 col-12 col-md-6'>
+                        <label>اسم العائلة</label>
+                        <input type='text' class='form-control rounded-0' name='family' required />
+                    </div>
+                    <div class='p-2 col-12 col-md-6'>
+                        <label>القرية</label>
+                        <input type='text' class='form-control rounded-0' name='city_search' required/>
+                    </div>
+                    <div class='p-2 col-12'>
+                        <!--<input type='submit' class='btn btn-dark px-3 py-2' value='Search'/>-->
+                        <button class='btn btn-dark px-4 py-2 rounded-0'>   
+                        <i class="fas fa-search ml-1" style="color: #ee5253"></i>
+                            بحث
+                            
+                        </button>
+                    </div>
                 </div>
                 
             

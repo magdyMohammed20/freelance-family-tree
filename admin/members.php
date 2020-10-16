@@ -16,12 +16,12 @@
 
         ?>
 <h1 class="text-center mt-3">Manage Members</h1>
-<button class="w3-button w3-teal w3-xlarge w3-left w3-open position-absolute" onclick="openLeftMenu()" style='left: 0; top: 80px'>&#9776;</button>
+<button class="w3-button w3-teal w3-xlarge w3-left w3-open position-absolute" onclick="openLeftMenu()" style='right: 0; top: 60px;'>&#9776;</button>
 <div class="container">
 
                 <?php
                         if(!$members_data){
-                            echo '<div class="alert alert-danger"> No Users Found <span class="font-weight-bold">You Can Add New Users</span></div>';
+                            echo '<div class="alert alert-danger"> لايوجد اعضاء <span class="font-weight-bold">باءمكانك اضافة اعضاء جدد</span></div>';
                         }
                         else{
                             foreach($members_data as $member){
@@ -314,35 +314,35 @@
 <?php }
         else if($do == 'Add'){?>
 
-<div class="container">
-<button class="w3-button w3-teal w3-xlarge w3-left w3-open position-absolute" onclick="openLeftMenu()" style='left: 0; '>&#9776;</button>
-<h2 class="p-2 bg-dark text-white my-5 rounded"><i class="fas fa-user-plus mr-2" style="color: #ee5253"></i>Add New Member</h2>
+<div class="container text-right pt-5">
+<button class="w3-button w3-teal w3-xlarge w3-left w3-open position-absolute" onclick="openLeftMenu()" style='right: 0; top: 70px;'>&#9776;</button>
+<h2 class="p-2 bg-dark text-white my-5 rounded"><i class="fas fa-user-plus ml-2" style="color: #ee5253"></i>اضافة عضو جديد</h2>
     <form class="edit-form" action="?do=insert" method="POST" enctype="multipart/form-data">
         <div class="row">
-            <div class="form-group my-3 col-6">
-                <label class="mt-1 p-0">Full Name</label>
+            <div class="form-group my-3 col-12 col-md-6">
+                <label class="mt-1 p-0">الاسم بالكامل</label>
                 <input type="text" name="fullName" class="form-control rounded-0" required>
             </div>
-            <div class="form-group my-3 col-6">
-                <label class="mt-1 p-0">Mother Name</label>
+            <div class="form-group my-3 col-12 col-md-6">
+                <label class="mt-1 p-0">اسم الام</label>
                 <input type="text" name="motherName" class="form-control rounded-0" required>
             </div>
-            <div class="form-group my-3 col-6">
-                <label class="mt-1 p-0">Wife Name</label>
+            <div class="form-group my-3 col-12 col-md-6">
+                <label class="mt-1 p-0">اسم الزوجة</label>
                 <input type="text" name="wife" class="form-control rounded-0" required>
             </div>
-            <div class="form-group my-3 col-6">
-                <label class="mt-1 p-0">City Name</label>
+            <div class="form-group my-3 col-12 col-md-6">
+                <label class="mt-1 p-0">القرية</label>
                 <input type="text" name="city" class="form-control rounded-0" required>
             </div>
-            <div class="form-group my-3 col-12">
-                <label class="mt-1 p-0">Son's Names</label>
+            <div class="form-group my-3 col-12 col-md-6">
+                <label class="mt-1 p-0">اسماء الابناء</label>
                 <textarea type="text" name="sons" style="resize: vertical" class="form-control rounded-0" required></textarea>
             </div>
             
             
         </div>
-        <button class="btn text-white bg-dark p-2 mt-3 rounded-0"><i class="fas fa-plus mr-2" style="color: #ee5253"></i>Add New Member</button>
+        <button class="btn text-white bg-dark p-2 mt-3 rounded-0"><i class="fas fa-plus ml-2" style="color: #ee5253"></i>اضافة العضو</button>
     </form>
 </div>
 <?php
@@ -367,24 +367,24 @@
 
                 if(empty($fullName) || $fullName === ''){
                     // Append Message To Array
-                    $formErrors[] = "User Full Name Can't Be Empty";
+                    $formErrors[] = "يرجي ادخال اسم المستخدم بالكامل";
                 }
 
                 if(empty($mother) || $mother === ''){
                     // Append Message To Array
-                    $formErrors[] = "Mother Name Can't Be Empty";
+                    $formErrors[] = "يرجي ادخال اسم الام";
                 }
 
                 if(empty($wife) || $wife === ''){
-                    $formErrors[] = "User Wife Can't Be Empty";
+                    $formErrors[] = "يرجي ادخال اسم الزوجة";
                 }
 
                 if(empty($sons) || $sons === ''){
-                    $formErrors[] = "User Sons Can't Be Empty";
+                    $formErrors[] = "يرجي ادخال اسماء الابناء";
                 }
 
                 if(empty($city) || $city === ''){
-                    $formErrors[] = "User City Can't Be Empty";
+                    $formErrors[] = "يرجي ادخال اسم المدينة";
                 }
                 // If There Aren't Errors Update The DB
                 if(count($formErrors) > 0){
@@ -408,8 +408,13 @@
                     $stmt->execute(Array($fullName,$mother,$wife,$sons,$city));
                     
                     echo '<div class="container mt-5">';
-                        echo '<div class="alert alert-success w-75 mx-auto mt-3 shadow-sm rounded-0">Member Added Successfully</div>';
-                        echo '<div class="w-75 mx-auto mt-4"><a href="?do=Add" class="d-inline-block bg-dark text-white p-3 text-decoration-none"><i class="fas fa-chevron-left mr-2" style="color: #ee5253;"></i>Add New Member</a></div>';
+                        echo '<div class="alert alert-success w-75 mx-auto mt-3 shadow-sm rounded-0 text-right">تم اضافة العضو بنجاح</div>';
+                        echo '<div class="d-flex justify-content-between w-75 mx-auto mt-4">';
+                            echo '<a href="?do=Add" class="d-inline-block bg-dark text-white p-3 text-decoration-none"><i class="fas fa-chevron-right ml-2" style="color: #ee5253;"></i>اضافة عضو اخر</a>';
+                            echo '<a href="dashboard.php" class="d-inline-block bg-dark text-white p-3 text-decoration-none">الصفحة الرئيسية<i class="fas fa-chevron-left mr-2" style="color: #ee5253;"></i></a>';
+                        echo '</div>';
+                        
+                        
                     echo '</div>';
                 }
 
@@ -417,168 +422,7 @@
             redirectHome('You Can\'t Access This Page Directly',10);
         }
     }
-        else if($do == 'Edit'){
-            // Check For User_Id That Want To Update The Data
-            $userId = isset($_GET['user_Id']) && is_numeric($_GET['user_Id'])?intval($_GET['user_Id']):0;
 
-            // Select Data Depending On UserId
-            $stmt = $conn->prepare("
-                SELECT *
-                FROM users
-                WHERE user_Id=?
-                LIMIT 1"
-            );
-            // Excute Query
-            $stmt->execute(Array($userId));
-            // Fetch Data
-            $data = $stmt->fetch(); // Fetch Row Data As Array
-
-            // Check If Row Exist
-            if($stmt->rowCount() > 0){
-
-            ?>
-<!-- If Row Exist Show The Form Of Update The Data -->
-<h2 class="text-center my-3">Edit Members</h2>
-<div class="container">
-    <form class="edit-form" action="?do=Update" method="POST">
-        <input type="hidden" name='userId' value="<?php echo $userId?>">
-        <div class="form-group my-3">
-            <label class="mt-1 p-0">userName</label>
-            <input type="text" name="userName" class="form-control" autocomplete="off" value="<?php echo $data['user_Name']; ?>">
-        </div>
-        <div class="form-group my-3">
-            <label class="mt-1 p-0">password</label>
-            <input type="hidden" name="oldPass" value="<?php echo $data['user_Password'];?>">
-            <input type="password" name="password" class="form-control" autocomplete="new-password" value="">
-        </div>
-        <div class="form-group my-3">
-            <label class="mt-1 p-0">email</label>
-            <input type="text" name="email" class="form-control" value="<?php echo $data['user_Email'];?>">
-        </div>
-        <div class="form-group my-3">
-            <label class="mt-1 p-0">fullName</label>
-            <input type="text" name="fullName" class="form-control" value="<?php echo $data['user_fullName'];?>">
-        </div>
-        <button class="btn btn-primary col-3 mt-3">Save</button>
-    </form>
-</div>
-<?php }
-
-
-            else{
-
-                 redirectHome('Page Not Founded',5);
-?>
-
-<?php }
-
-        }
-        else if($do == 'Update'){
-
-            if($_SERVER['REQUEST_METHOD'] == 'POST'){
-                echo '<h1 class="text-center">Update Member</h1>';
-                $id = $_POST['userId'];
-                $userName = $_POST['userName'];
-                $email = $_POST['email'];
-                $fullName = $_POST['fullName'];
-
-                // Check For User name Duplication Before Update The Data
-                checkAny('user_Name', 'users' , $userName);
-
-                // Check If Password Is Setted I Will Update Password In DB
-                // Else I Will Updated Other Data With Old Password
-                $newPassword = empty($_POST['password']) ? $_POST['oldPass'] : sha1($_POST['password']);
-
-                // Validate Updated User Data
-                // Array For Store Errors And Display It
-                $formErrors = Array();
-                if(empty($userName)){
-                    // Append Message To Array
-                    $formErrors[] = "User Name Can't Be Empty";
-                }
-                if(empty($email)){
-                    // Append Message To Array
-                    $formErrors[] = "User Email Can't Be Empty";
-                }
-                if(empty($fullName)){
-                    // Append Message To Array
-                    $formErrors[] = "User Full Name Can't Be Empty";
-                }
-
-
-                // If There Aren't Errors Update The DB
-                if(count($formErrors) > 0){
-                    // Display All Errors For User
-                    foreach($formErrors as $error){
-                        echo "<div class='alert alert-danger w-75 mx-auto my-3 shadow'>".  $error ."</div>";
-                    }
-                }else{
-                    // Update Data Depending On UserId
-                    $stmt = $conn->prepare("
-                        UPDATE users
-                        SET user_Name=?,user_Password=?,user_Email=?,user_fullName=?
-                        WHERE user_Id=?
-                        LIMIT 1"
-                    );
-                    // Excute Query
-                    $stmt->execute(Array($userName,$newPassword,$email,$fullName,$id));
-
-                    // Print Number Of Updated Records
-                    echo '<h1 class="alert alert-success w-75 mx-auto text-center">' . $stmt->rowCount() . ' Record Updated' . '</h1>';
-                }
-
-            }else{
-                redirectHome('You Can\'t Access This Page Directly',5);
-            }
-        }
-
-        else if($do == 'Delete'){
-            // Check For User_Id That Want To Update The Data
-            $userId = isset($_GET['user_Id']) && is_numeric($_GET['user_Id'])?intval($_GET['user_Id']):0;
-
-            // Select Data Depending On UserId
-            $stmt = $conn->prepare("
-                DELETE
-                FROM users
-                WHERE user_Id=?
-                LIMIT 1"
-            );
-            // Excute Query
-            $stmt->execute(Array($userId));
-
-            if($stmt->rowCount() > 0){
-                echo '<div class="alert alert-success w-75 mx-auto mt-4">Member Deleted Successfully</div>';
-            }else{
-                redirectHome('Member Not Founded' , 10);
-            }
-        }
-        else if($do == 'activate'){
-            // Check For User_Id That Want To Update The Data
-            $userId = isset($_GET['user_Id']) && is_numeric($_GET['user_Id'])?intval($_GET['user_Id']):0;
-
-            // Check If User Id Is Exist In DB Or Not
-            $check = checkActivated('user_Id','users',$userId);
-
-            // If User Id Exist Then Update User reg_status To Be A Member
-            if($check == true){
-                // Select Data Depending On UserId
-                $stmt = $conn->prepare("
-                    UPDATE users
-                    SET reg_status = 1
-                    WHERE user_Id=?
-                    LIMIT 1"
-                );
-                // Excute Query
-                $stmt->execute(Array($userId));
-
-                echo '<div class="alert alert-success w-75 mx-auto mt-4">Record Updated Successfully And User Be A Member</div>';
-            }
-            // If User Id Not Exist Then Show Error Message
-            else{
-                echo '<div class="alert alert-danger w-75 mx-auto mt-4">Failed To Update User As A Member</div>';
-            }
-        }
-        //include $tmp . 'footer.php';
 
     }else{
         header('Location: index.php');
