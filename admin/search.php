@@ -23,26 +23,30 @@
             
                 <div class='p-2 w-75 mx-auto'>
                     <label>First Name</label>
-                    <input type='text' class='form-control ' name='first_name_search' required/>
+                    <input type='text' class='form-control rounded-0' name='first_name_search' required/>
                 </div>
                 <div class='p-2 w-75 mx-auto'>
                     <label>Second Name</label>
-                    <input type='text' class='form-control' name='second_name_search' required/>
+                    <input type='text' class='form-control rounded-0' name='second_name_search' required/>
                 </div>
                 <div class='p-2 w-75 mx-auto'>
                     <label>Third Name</label>
-                    <input type='text' class='form-control' name='third_name_search' required/>
+                    <input type='text' class='form-control rounded-0' name='third_name_search' required/>
                 </div>
                 <div class='p-2 w-75 mx-auto'>
                     <label>Family Name</label>
-                    <input type='text' class='form-control' name='family' required />
+                    <input type='text' class='form-control rounded-0' name='family' required />
                 </div>
                 <div class='p-2 w-75 mx-auto'>
                     <label>City Name</label>
-                    <input type='text' class='form-control' name='city_search' required/>
+                    <input type='text' class='form-control rounded-0' name='city_search' required/>
                 </div>
                 <div class='p-2 w-75 mx-auto'>
-                    <input type='submit' class='btn btn-primary' value='Search'/>
+                    <!--<input type='submit' class='btn btn-dark px-3 py-2' value='Search'/>-->
+                    <button class='btn btn-dark px-4 py-2 rounded-0'>
+                        <i class="fas fa-search mr-1" style="color: #ee5253"></i>
+                        Search
+                    </button>
                 </div>
                 
             

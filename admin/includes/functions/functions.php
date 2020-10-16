@@ -107,10 +107,10 @@
     }
 
     // Get Latest Registered Members And Items
-    function getLatest($select,$table,$limit){
+    function getLatest($select,$table){
         global $conn;
 
-        $stmt = $conn->prepare("SELECT $select FROM $table LIMIT $limit");
+        $stmt = $conn->prepare("SELECT $select FROM $table");
 
         $stmt->execute(); // Execute The Query
 

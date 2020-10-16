@@ -6,7 +6,7 @@
         include 'init.php';
 
     // Get Latest 5 Registered Users In Array
-    $latestUsers = getLatest('*','person',5,'user_Id');
+    $latestUsers = getLatest('*','person');
 ?>
 
 <!-- Start Dashboard Content -->
@@ -17,7 +17,7 @@
 <button class="w3-button w3-teal w3-xlarge w3-left w3-open position-absolute" onclick="openLeftMenu()" style='left: 0; '>&#9776;</button>
     
     <div class="row mt-4">
-        <div class="col-6 text-center p-3">
+        <div class="col-4 text-center p-3">
             <div class="p-4 rounded shadow-sm">
                 <p class='mb-1'>Total Members</p>
                 <a href="members.php" class="stretched-link">
@@ -25,11 +25,19 @@
                 </a>
             </div>
         </div>
-        <div class="col-6 text-center p-3">
+        <div class="col-4 text-center p-3">
             <div class="p-4 rounded shadow-sm">
-                <p class='mb-1'>Pending Members</p>
-                <a href="members.php?pending=pend" class="stretched-link text-decoration-none">
-                    <span class='d-block'><?php echo getTotalRowsWithCondition('user_Id','users','reg_status',0); ?></span>
+                <p class='mb-1'>Search</p>
+                <a href="search.php" class="stretched-link text-decoration-none text-white">
+                    <span class='d-block'><i class="fas fa-search"></i></span>
+                </a>
+            </div>
+        </div>
+        <div class="col-4 text-center p-3">
+            <div class="p-4 rounded shadow-sm">
+                <p class='mb-1'>Add New Member</p>
+                <a href="search.php" class="stretched-link text-decoration-none text-white">
+                    <span class='d-block'><i class="fas fa-user-plus"></i></span>
                 </a>
             </div>
         </div>
@@ -39,10 +47,10 @@
 
 <div class="container admin-stats2">
     <div class="row">
-        <div class="col-6 p-2">
+        <div class="col-12 p-2">
             <div class="card">
                 <div class="card-header">
-                    <i class="fas fa-users fa-lg mr-2"></i>Latest Registered Users
+                    <i class="fas fa-users fa-lg mr-2"></i>All Registered Users
                 </div>
                 <div class="card-body p-3">
                    <?php

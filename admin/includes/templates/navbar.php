@@ -17,11 +17,11 @@
 
   <button onclick="closeLeftMenu()" class="w3-bar-item w3-button w3-large bg-danger text-center text-white position-absolute" style="width: 45px; height: 45px; left: 100%; top: 5px"> &times;</button>
   <h2 class='pl-3 text-white mt-2'>Dashboard</h2>
-  <a class="nav-link py-3 text-white w3-bar-item w3-button active mt-3" href="dashboard.php">Home <span class="sr-only">(current)</span></a>
-  <a class="nav-link py-3 text-white w3-bar-item w3-button" href="members.php">All Tree's</a>
-  <a class="nav-link py-3 text-white w3-bar-item w3-button" href="members.php?do=Add">Add New Member</a>
-  <a class="nav-link py-3 text-white w3-bar-item w3-button" href="search.php">Search</a>
-  <a class="nav-link py-3 text-white w3-bar-item w3-button" href="logout.php">Logout</a>
+  <a class="nav-link py-3 text-white w3-bar-item w3-button active mt-3 d-flex align-items-center" href="dashboard.php"> <i class="fas fa-home mr-3"></i>Home </a>
+  <!--<a class="nav-link py-3 text-white w3-bar-item w3-button d-flex align-items-center" href="members.php">All Tree's</a>-->
+  <a class="nav-link py-3 text-white w3-bar-item w3-button d-flex align-items-center" href="members.php?do=Add"><i class="fas fa-user-plus mr-3"></i>Add New Member</a>
+  <a class="nav-link py-3 text-white w3-bar-item w3-button d-flex align-items-center" href="search.php"><i class="fas fa-search mr-3"></i>Search</a>
+  <a class="nav-link py-3 text-white w3-bar-item w3-button d-flex align-items-center" href="logout.php"><i class="fas fa-power-off mr-3"></i>Logout</a>
 </div>
 
 <script>
